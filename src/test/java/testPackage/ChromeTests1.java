@@ -45,18 +45,59 @@ public class ChromeTests1 {
      * Close Google Chrome
      */
     @Test
-    public void checkFirstResultLink() {
+    public void searchForSelenium() {
         driver.get("https://duckduckgo.com/");
         By searchBox =By.name("q");
         driver.findElement(searchBox).sendKeys("Selenium WebDriver");
         driver.findElement(searchBox).submit();
         By firstResultLinkLocator = By.xpath("//article[contains(@id,'r1-0')]//h2/a");
         String firstResultLink = driver.findElement(firstResultLinkLocator).getAttribute("href");
-        System.out.println(firstResultLink);
+       // System.out.println(firstResultLink);
        // driver.get(firstResultLink);
         Assert.assertEquals(firstResultLink, "https://www.selenium.dev/documentation/webdriver/", "The first result link is not as expected.");
 
     }
+
+    /**
+     * Open Google Chrome
+     * Navigate to [<a href="https://duckduckgo.com/">duckduckgo</a>]
+     * Search for [Cucumber IO]
+     * Assert that the link of the second result contains [<a href="https://www.linkedin.com">...</a>]
+     * Close Google Chrome
+     */
+    @Test
+    public void searchForCucumber()
+    {
+        driver.get("https://duckduckgo.com/");
+        By searchBox = By.name("q");
+        driver.findElement(searchBox).sendKeys("Cucumber IO");
+        driver.findElement(searchBox).submit();
+        By secondResultLinkLocator = By.xpath("//article[contains(@id,'r1-2')]//h2/a");
+        String secondResultLink = driver.findElement(secondResultLinkLocator).getAttribute("href");
+       // System.out.println(secondResultLink);
+        Assert.assertTrue(secondResultLink.contains("linkedin.com"), "The second result link does not contain linkedin.com");
+    }
+
+    /**
+     *Open Google Chrome
+     * Navigate to [<a href="http://the-internet.herokuapp.com/checkboxes">...</a>]
+     * Check Checkbox 1
+     * Assert that both Checkboxes are checked
+     * Close Google Chrome
+     */
+    @Test
+    public void checkCheckboxes()
+    {
+        driver.get("http://the-internet.herokuapp.com/checkboxes");
+        By checkbox1Locator = By.xpath("//form[@id='checkboxes']/input[1]");
+        By checkbox2Locator = By.xpath("//form[@id='checkboxes']/input[2]");
+       //  System.out.println("checkbox1 check status is "+driver.findElement(checkbox1Locator).isSelected());
+       // System.out.println("checkbox2 check status is "+driver.findElement(checkbox2Locator).isSelected());
+        driver.findElement(checkbox1Locator).click();
+        Assert.assertTrue(driver.findElement(checkbox1Locator).isSelected(),"Checkbox 1 is not selected!");
+        Assert.assertTrue(driver.findElement(checkbox2Locator).isSelected(),"Checkbox 2 is not selected!");
+    }
+
     @BeforeMethod
     private void setUp()
     {
