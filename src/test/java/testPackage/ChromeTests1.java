@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class ChromeTests1 {
     private WebDriver driver;
-    /**
+    /** Task1
      * Open Google Chrome
      * Navigate to [<a href="https://duckduckgo.com/">duckduckgo</a>]
      * Assert that the page title is [Google]
@@ -23,7 +23,7 @@ public class ChromeTests1 {
         Assert.assertEquals(driver.getTitle(),"Google","The title not the same.");
     }
 
-    /**
+    /** Task2
      * Open Google Chrome
      * Navigate to [<a href="https://duckduckgo.com/">duckduckgo</a>]
      * Assert that the DuckDuckGo logo is displayed
@@ -37,7 +37,7 @@ public class ChromeTests1 {
         Assert.assertTrue(driver.findElement(logoLocator).isDisplayed(), "DuckDuckGo logo is not  displayed!");
     }
 
-    /**
+    /** Task3
      * Open Google Chrome
      * Navigate to [<a href="https://duckduckgo.com/">duckduckgo</a>]
      * Search for [Selenium WebDriver]
@@ -58,7 +58,7 @@ public class ChromeTests1 {
 
     }
 
-    /**
+    /** Task5
      * Open Google Chrome
      * Navigate to [<a href="https://duckduckgo.com/">duckduckgo</a>]
      * Search for [Cucumber IO]
@@ -79,7 +79,7 @@ public class ChromeTests1 {
         Assert.assertTrue(secondResultLink.contains("linkedin.com"), "The second result link does not contain linkedin.com");
     }
 
-    /**
+    /** Task6
      *Open Google Chrome
      * Navigate to [<a href="http://the-internet.herokuapp.com/checkboxes">...</a>]
      * Check Checkbox 1

@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class FireFoxTests1 {
     private WebDriver driver;
-    /**
+    /** Task4
      * Open Mozilla Firefox
      * Navigate to [<a href="https://duckduckgo.com/">duckduckgo</a>]
      * Search for [TestNG]
