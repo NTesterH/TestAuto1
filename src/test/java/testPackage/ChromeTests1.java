@@ -65,6 +65,7 @@ public class ChromeTests1 {
      * Assert that the link of the second result contains [<a href="https://www.linkedin.com">...</a>]
      * Close Google Chrome
      */
+
     @Test
     public void searchForCucumber()
     {
